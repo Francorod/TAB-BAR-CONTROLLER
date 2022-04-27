@@ -23,6 +23,7 @@ class ViewController: UIViewController {
         view.addSubview(button)
         button.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
     }
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         button.center = view.center
@@ -51,6 +52,7 @@ class ViewController: UIViewController {
         }
         let images = ["house", "magnifyingglass", "person.circle", "star", "gear"]
         
+        
         for x in 0..<items.count {
             items[x].image = UIImage(systemName: images[x])
         }
@@ -62,7 +64,7 @@ class ViewController: UIViewController {
 class FirstViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .red
+        view.backgroundColor = .systemPink
         title = "Home"
     }
     
