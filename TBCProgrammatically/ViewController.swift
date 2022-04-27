@@ -22,6 +22,10 @@ class ViewController: UIViewController {
         view.backgroundColor = .systemBlue
         view.addSubview(button)
         button.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
+        
+//        self.tabBarController?.tabBar.isTranslucent = true
+//        UITabBar.appearance().clipsToBounds = true
+        
     }
     
     override func viewDidLayoutSubviews() {
@@ -47,6 +51,8 @@ class ViewController: UIViewController {
         
         tabBarVC.setViewControllers([vc1, vc2,vc3,vc4,vc5], animated: false)
         
+
+        
         guard let items = tabBarVC.tabBar.items else {
             return
         }
@@ -56,6 +62,11 @@ class ViewController: UIViewController {
         for x in 0..<items.count {
             items[x].image = UIImage(systemName: images[x])
         }
+        
+        tabBarVC.tabBar.isTranslucent = true
+//        tabBarVC.tabBar.isOpaque = true
+        // Change background color of the Bar
+        tabBarVC.tabBar.backgroundColor = .white
         
         tabBarVC.modalPresentationStyle = .fullScreen
         present(tabBarVC, animated: true)
@@ -91,7 +102,7 @@ class ThirdViewController: UIViewController {
 class FourthViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .green
+        view.backgroundColor = .systemYellow
         title = "Favorites"
     }
     
